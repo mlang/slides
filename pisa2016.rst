@@ -1,0 +1,204 @@
+.. include:: <s5defs.txt>
+
+======================
+Braille Music Compiler
+======================
+
+:Author: Mario Lang
+:Date: 2016-03-01
+
+Adventures in fully automated transcription.
+
+.. footer:: Pisa, 2016
+
+.. contents::
+   :class: handout
+
+About me
+========
+
+I am (amongst many other things)
+
+* a blind hobby musician
+* a computer programming and software freedom enthusiast
+
+In 2007, these two interests of mine merged into one vision.
+
+How I came to Braille music
+===========================
+
+While learning to play the traverse flute,
+I realized that I am not very good at playing complicated
+pieces by ear.
+
+So I also started to learn braille music code.
+
+And immediately realized that Braille scores are tedious to obtain.
+
+I am a Linux user
+=================
+
+When looking for software to help me transcribe
+from other digital formats, I found GOODFEEL from
+Dancing Dots.
+
+* Only available for Microsoft Windows
+* Expensive (900 EUR when I checked)
+
+I wanted to avoid Windows Software.
+
+And the price tag was just too much for a hobby.
+
+But a good reason for yet another one.
+
+From MusicXML to Braille
+========================
+
+So I decided to keep the money,
+and start writing Free Software
+to deal with Braille music code.
+
+First I started to explore the problem domain by
+prototyping a MusicXML to Braille transcription
+program in Python.
+
+After roughly 4000 lines of code,
+I had learnt some things about
+the problem domain, and started
+a cross-platform portable project in Java.
+
+FreeDots
+========
+
+FreeDots can transcribe MusicXML files to
+Braille music code.
+
+* A command-line tool for batch processing files.
+* A user interface for interactively working with Braille scores
+
+Initial Features
+================
+
+The interactive features of FreeDots are driven by what
+I immediately wanted to have while still *learning*
+Braille music code.
+
+* Play whole score
+* Play individual notes under the editing cursor
+* Optionally indicate playback position with cursor movements.
+* Add or edit fingering annotations, save back to MusicXML.
+* Keep cursor on same note when reformatting.
+
+Editing?  Sure, fingering!
+==========================
+
+Presenting a Braille score for viewing only is significantly
+eaiser to implement.  So FreeDots does *not* allow
+to create new scores.  But it allows to
+*edit* fingering.  Analogous to what sighted
+people do with a pencil on a printed score.
+
+Coloured Braille
+================
+
+Thanks to an initiative of a friend of mine,
+Samuel Thibault from France, a team at a Bordeaux
+school for informatics has contributed code to FreeDots.
+
+Amongst other things, they have helped to make
+the Braille output easier to read for
+sighted people, by assigning colours to
+different Braille music signs.
+
+Screenshot
+==========
+
+Here should be a screenshot of FreeDots.
+
+Wikifonia
+=========
+
+Around 2009, I made contacts with the MuseScore project.
+They were implementing the Wikifonia project (no longer available).
+A big collection of MusicXML scores for pop songs.
+
+Collaboration happened, and FreeDots was intergrated
+into wikifonia.org backend.  You were able to download
+*every* score of that site in Braille!
+
+wikifonia.org has been dicontinued, sadly.
+
+AppEngine version
+=================
+
+We still have
+
+musicxml2braille.appspot.com
+
+A Google AppEngine hosted version
+of FreeDots.  Send your MusicXML, receive
+transcribed version as download.
+
+Similar to what BrailleMUSE does.
+
+Challenges
+==========
+
+The more code I write, the more I realize how difficult the problem is.
+
+* Partial in-accord
+* Tuplets
+* Doubling where possible
+* Simile finding
+* Detecting value ambiguity
+* Automatically *resolving* detected ambiguities
+
+Value ambiguity
+===============
+
+A computationally intensive challenge.
+
+* The value of a note or rest is ambiguous
+* Time signature and barlines absolutely necessary to recover true meaning
+* Note groupings (Braille beaming) add to the ambiguity
+* Possibly similar algorithms from and to Braille
+
+The task is difficult
+=====================
+
+My insight so far: The task is difficult if we
+want to do it *right*.  Quality of scores is important.
+We want *high* *quality* results from software transcription.
+
+FreeDots was not there yet, but it was useful to some.
+
+Free Software to the rescue
+===========================
+
+Software to deal with Braille music notation should be
+
+* Free for everyone, teachers and students alike
+* Available for all major operating systems (Windows, Mac, Linux)
+* Easy to modify and extend
+* Support *all* features of Braille music code
+* and stay free for everyone
+
+We should try to stop reinventing the wheel.
+Resources and know-how are very scarce.
+
+Braille Music Compiler
+======================
+
+The scope of FreeDots made it only possible to consume
+Braille music notation.  This time, I wanted to ttackle
+the harder part, making it possible to *write* Braille music code from scratch.
+
+* Parse unannotated Braille music code
+* Detect actual values, reporting ambiguities as errors
+* Convert to LilyPond for display, print, and playback
+* Convert to MusicXML for interchange with other notation software
+* Convert back to Braille music code reformatting
+* Provide accessible cross-platform user interface
+* Keep open to reincorporate FreeDots freatureset later on
+
+
