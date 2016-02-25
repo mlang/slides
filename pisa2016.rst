@@ -24,6 +24,8 @@ I am (amongst many other things)
 
 In 2007, these two interests of mine merged into one vision.
 
+More about me here: https://blind.guru/
+
 How I came to Braille music
 ===========================
 
@@ -31,7 +33,7 @@ While learning to play the traverse flute,
 I realized that I am not very good at playing complicated
 pieces by ear.
 
-So I also started to learn braille music code.
+So I also started to learn Braille music code.
 
 And immediately realized that Braille scores are tedious to obtain.
 
@@ -39,7 +41,7 @@ I am a Linux user
 =================
 
 When looking for software to help me transcribe
-from other digital formats, I found GOODFEEL from
+from other digital formats to Braille, I found GOODFEEL from
 Dancing Dots.
 
 * Only available for Microsoft Windows
@@ -135,7 +137,7 @@ AppEngine version
 
 We still have
 
-musicxml2braille.appspot.com
+http://musicxml2braille.appspot.com
 
 A Google AppEngine hosted version
 of FreeDots.  Send your MusicXML, receive
@@ -259,12 +261,30 @@ the loop.
 The user interface (a prototype)
 ================================
 
-The user interface displays LilyPond output along with Braille editor.
+The user interface displays LilyPond processed graphical notation along with Braille editor.
 
 Click on a note in the visual display, and the cursor jumps to Braille.
 
 Move the cursor in the Braille editor, and the corresponding notes
-will light up.  Ideal for cooperation between sighted and blind.
+will light up.
+
+Ideal for cooperation between sighted and blind.
+
+Documentation
+=============
+
+A Braille music tutorial with automatically transcribed
+samples in visual notation and as MP3 for listening.
+
+http://bmc.blind.guru/
+
+Built with a custom plugin to the Sphinx_ documentation system.
+Automatically calls BMC to do the transcription of inline Braille music code.
+
+Also a demo of most supported features.  If it is in the
+tutorial, BMC can handle it.
+
+.. _Sphinx: http://www.sphinx-doc.org/
 
 Roadmap
 =======
@@ -280,4 +300,24 @@ chance of achieving something useful.
 * Allow roundtrip, import, edit, export
 * Improve the user interface, adding playback support (cross platform, sigh)
 * Improve web-based version
+
+All my code is on GitHub
+========================
+
+The source code to FreeDots_, BMC_, xsdcxx-musicxml_ and bmmlcxx_
+is all hosted on `github.com/mlang`_.
+
+.. _FreeDots: https://github.com/mlang/FreeDots
+.. _BMC: https://github.com/mlang/bmc
+.. _xsdcxx-musicxml: https://github.com/mlang/xsdcxx-musicxml
+.. _bmmlcxx: https://github.com/mlang/bmmlcxx
+.. _`github.com/mlang`: https://github.com/mlang
+
+It is free to use, distribute and modify (see LICENSE for details).
+
+Any form of contribution whatsoever is highly welcome!
+
+Users, Braille music experts, technical writers, programmers.
+
+Please find a way to help if you think these projects are worthwhile to persue.
 
