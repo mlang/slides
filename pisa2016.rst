@@ -58,9 +58,7 @@ So I decided to keep the money,
 and start writing Free Software
 to deal with Braille music code.
 
-First I started to explore the problem domain by
-prototyping a MusicXML to Braille transcription
-program in Python.
+First prototype in Python.
 
 After roughly 4000 lines of code,
 I had learnt some things about
@@ -75,6 +73,7 @@ Braille music code.
 
 * A command-line tool for batch processing files.
 * A user interface for interactively working with Braille scores
+* Java as a vehicle for portability, I develop and use my code on Linux
 
 Initial Features
 ================
@@ -92,11 +91,14 @@ Braille music code.
 Editing?  Sure, fingering!
 ==========================
 
-Presenting a Braille score for viewing only is significantly
-eaiser to implement.  So FreeDots does *not* allow
-to create new scores.  But it allows to
-*edit* fingering.  Analogous to what sighted
-people do with a pencil on a printed score.
+Presenting a Braille score for viewing only
+is significantly eaiser to implement.
+
+So FreeDots does *not* allow to create new scores.
+
+But it allows to *edit* fingering.
+Analogous to what sighted people can do
+with a pencil on a printed score.
 
 Coloured Braille
 ================
@@ -144,8 +146,9 @@ Similar to what BrailleMUSE does.
 Challenges
 ==========
 
-The more code I write, the more I realize how difficult the problem is.
+The more code I wrote, the more I realized how difficult the problem is.
 
+* Hyphenation (separator dots)
 * Partial in-accord
 * Tuplets
 * Doubling where possible
@@ -181,7 +184,8 @@ Software to deal with Braille music notation should be
 * Available for all major operating systems (Windows, Mac, Linux)
 * Easy to modify and extend
 * Support *all* features of Braille music code
-* and stay free for everyone
+* Fasciliate cooperation between blind and sighted
+* And stay free for everyone
 
 We should try to stop reinventing the wheel.
 Resources and know-how are very scarce.
@@ -191,14 +195,89 @@ Braille Music Compiler
 
 The scope of FreeDots made it only possible to consume
 Braille music notation.  This time, I wanted to ttackle
-the harder part, making it possible to *write* Braille music code from scratch.
+the harder part, making it possible to *write*
+Braille music code from scratch.
 
-* Parse unannotated Braille music code
+And keep the design open enough to make it possible
+to reimplement transcription to Braille later on as well.
+
+What it can do
+==============
+
+* Parse unannotated Braille music code from a text file
 * Detect actual values, reporting ambiguities as errors
 * Convert to LilyPond for display, print, and playback
 * Convert to MusicXML for interchange with other notation software
-* Convert back to Braille music code reformatting
+* Reformat for different line width (print, braille display)
 * Provide accessible cross-platform user interface
-* Keep open to reincorporate FreeDots freatureset later on
 
+Braille music features supported
+================================
+
+BMC can already read 2/3 of the Goldberg variations.
+
+* Section-by-section format
+* Fully support in-accord
+* Notegroupings (Braille beaming)
+* Many (all?) types of simile
+* (Possibly nested) tuplets
+* Slur and tuplet doubling (no interval doubling yet)
+
+Reflow
+======
+
+* Breaking measures across lines is non-trivial
+* Not as simple as just inserting a hyphen
+* Optional separator dots change line width
+* Hyphenation interacts with notegrouping rules
+* Adapted algorithm from TeX, Donald E. Knuth
+  "Breakling Paragraphs into Lines" with modifications
+
+LilyPond
+========
+
+Initial LilyPond export code was contributed by
+the same french school as has already contributed to FreeDots.
+
+This is the most complete export target.
+
+Used to drive the interactive features of the user interface.
+
+Allows to play scores since LilyPond can generate MIDI.
+
+
+MusicXML
+========
+
+Basic support is working, lack of broader testing.
+
+I have written a C++ library which allows to read and write
+MusicXML documents.  So the road is paved to implement
+MusicXML to Braille music transcription again in BMC, closing
+the loop.
+
+The user interface (a prototype)
+================================
+
+The user interface displays LilyPond output along with Braille editor.
+
+Click on a note in the visual display, and the cursor jumps to Braille.
+
+Move the cursor in the Braille editor, and the corresponding notes
+will light up.  Ideal for cooperation between sighted and blind.
+
+Roadmap
+=======
+
+The task is huge, to big for one person.
+I will try to get as far as I can.
+If people join me, we have a much higher
+chance of achieving something useful.
+
+* Support for reading and writing BMML
+* Validate the absence of ambiguities in BMML files
+* MusicXML (and MEI?) *to* Braille music transcription, better this time
+* Allow roundtrip, import, edit, export
+* Improve the user interface, adding playback support (cross platform, sigh)
+* Improve web-based version
 
