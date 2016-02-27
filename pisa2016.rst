@@ -40,9 +40,9 @@ And immediately realized that Braille scores are tedious to obtain.
 I am a Linux user
 =================
 
-When looking for software to help me transcribe
-from other digital formats to Braille, I found GOODFEEL from
-Dancing Dots.
+First software I found was GOODFEEL_ from Dancing Dots.
+
+.. _GOODFEEL: http://www.dancingdots.com/main/goodfeel.htm
 
 * Only available for Microsoft Windows
 * Expensive (900 EUR when I checked)
@@ -261,14 +261,15 @@ the loop.
 The user interface (a prototype)
 ================================
 
-The user interface displays LilyPond processed graphical notation along with Braille editor.
+.. image:: images/bmc.png
 
-Click on a note in the visual display, and the cursor jumps to Braille.
+Cooperation between sighted and blind
+=====================================
 
-Move the cursor in the Braille editor, and the corresponding notes
-will light up.
-
-Ideal for cooperation between sighted and blind.
+* Displays LilyPond processed graphical notation along with Braille editor
+* Click on a note in the visual display, and cursor jumps to Braille
+* Move the cursor in Braille editor, and the corresponding notes are highlighted
+* No fancy editing/navigation features yet, behaves like a plain notepad
 
 Documentation
 =============
