@@ -117,7 +117,8 @@ different Braille music signs.
 Screenshot
 ==========
 
-Here should be a screenshot of FreeDots.
+.. image:: images/freedots.png
+	
 
 Wikifonia
 =========
