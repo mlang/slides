@@ -94,7 +94,7 @@ Editing?  Sure, fingering!
 ==========================
 
 Presenting a Braille score for viewing only
-is significantly eaiser to implement.
+is significantly easier to implement.
 
 So FreeDots does *not* allow to create new scores.
 
@@ -118,7 +118,6 @@ Screenshot
 ==========
 
 .. image:: images/freedots.png
-	
 
 Wikifonia
 =========
@@ -234,7 +233,7 @@ Reflow
 * Optional separator dots change line width
 * Hyphenation interacts with notegrouping rules
 * Adapted algorithm from TeX, Donald E. Knuth
-  "Breakling Paragraphs into Lines" with modifications
+  "Breaking Paragraphs into Lines" with modifications
 
 LilyPond
 ========
