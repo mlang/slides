@@ -271,6 +271,15 @@ Cooperation between sighted and blind
 * Move the cursor in Braille editor, and the corresponding notes are highlighted
 * No fancy editing/navigation features yet, behaves like a plain notepad
 
+Live demo
+=========
+
+A `live demo of BMC`_ from a talk
+given in August 2015 in Heidelberg, Germany, can be found on my YouTube
+page.
+
+.. _`live demo of BMC`: https://www.youtube.com/watch?v=TjfKDJm_xmI
+
 Documentation
 =============
 
@@ -337,11 +346,35 @@ is all hosted on `github.com/mlang`_.
 .. _bmmlcxx: https://github.com/mlang/bmmlcxx
 .. _`github.com/mlang`: https://github.com/mlang
 
-It is free to use, distribute and modify (see LICENSE for details).
+They are free to use, distribute and modify (see LICENSE for details).
+
+Contributors Welcome
+====================
 
 Any form of contribution whatsoever is highly welcome!
 
 Users, Braille music experts, technical writers, programmers.
 
 Please find a way to help if you think these projects are worthwhile to persue.
+
+Contact information
+===================
+
+Please send feedback and questions to
+
+mlang@blind.guru
+
+If you like what I do, you can follow me on
+
+* GitHub (mlang_)
+* Twitter (`@blindbird23`_)
+* FaceBook (disyled_)
+* Youtube (mlang23_)
+* SoundCloud (delYsid_)
+
+.. _mlang: https://github.com/mlang
+.. _`@blindbird23`: https://twitter.com/blindbird23
+.. _disyled: https://www.facebook.com/disyled
+.. _mlang23: https://www.youtube.com/user/mlang23
+.. _delYsid: https://soundcloud.com/mario-lang
 
